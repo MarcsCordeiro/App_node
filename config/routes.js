@@ -10,4 +10,8 @@ module.exports = function (server) {
     // rotas da API
     const billingCycleService = require('../api/billingCycle/billingCycleService')
     billingCycleService.register(router, '/billingCycles')
+
+    //Rota do sumário de crédito e débito
+    const billingSummaryService = require('../api/billingSummary/billingSumaryService')
+    router.route('/billingSummary').get(billingSummaryService.getSummary)
 }
